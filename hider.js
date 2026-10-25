@@ -31,51 +31,53 @@
 `;
 
   // ── CSS for the floating panel UI ────────────────────────────────────────
+  // Matches the popup: navy surfaces, ice-blue accents (see popup.css).
   const PANEL_CSS = `
 .cbh-panel {
   position: fixed; bottom: 20px; right: 20px; z-index: 2147483647;
   pointer-events: auto; display: flex; align-items: center; gap: 10px;
-  padding: 10px 16px; background-color: #050505; color: #ededed;
-  border-radius: 12px; border: 1px solid rgba(255,255,255,0.15);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  padding: 8px 10px 8px 8px; background-color: #0b1426; color: #ffffff;
+  border-radius: 14px; border: 1px solid rgba(138,180,255,0.20);
+  box-shadow: 0 8px 28px rgba(5,9,18,0.55), 0 0 0 1px rgba(5,9,18,0.4);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 13px; user-select: none; transition: all .25s ease;
 }
 .cbh-panel::before {
-  content: ""; position: absolute; inset: 0; border-radius: 12px;
-  background: radial-gradient(100% 100% at 50% 0%, rgba(255,255,255,0.06) 0%, transparent 100%);
+  content: ""; position: absolute; inset: 0; border-radius: 14px;
+  background: radial-gradient(100% 100% at 50% 0%, rgba(138,180,255,0.08) 0%, transparent 100%);
   pointer-events: none;
 }
-.cbh-panel--collapsed { padding: 8px; gap: 0; }
+.cbh-panel--collapsed { padding: 6px; gap: 4px; }
 .cbh-panel--collapsed .cbh-title, .cbh-panel--collapsed .cbh-switch,
 .cbh-panel--collapsed .cbh-status { display: none !important; }
-.cbh-title { font-weight: 500; white-space: nowrap; }
+.cbh-logo { display: block; width: 24px; height: 24px; flex-shrink: 0; border-radius: 6px; box-shadow: 0 0 0 1px rgba(138,180,255,0.20); }
+.cbh-title { font-weight: 600; white-space: nowrap; letter-spacing: -0.01em; }
 .cbh-switch { position: relative; display: inline-block; flex-shrink: 0; width: 36px; height: 20px; cursor: pointer; }
 .cbh-switch input { opacity: 0; width: 0; height: 0; position: absolute; }
 .cbh-slider {
-  position: absolute; inset: 0; background: #121212;
-  border-radius: 20px; border: 1px solid rgba(255,255,255,0.16); transition: 0.3s;
+  position: absolute; inset: 0; background: #111d33;
+  border-radius: 20px; border: 1px solid rgba(138,180,255,0.20); transition: 0.3s;
   box-sizing: border-box;
 }
 .cbh-slider::before {
   content: ""; position: absolute; left: 2px; top: 50%; transform: translateY(-50%);
-  width: 14px; height: 14px; background: #71717a; border-radius: 50%; transition: 0.3s;
+  width: 14px; height: 14px; background: #6f7d97; border-radius: 50%; transition: 0.3s;
 }
-.cbh-switch input:checked + .cbh-slider { background: #ffffff; border-color: #ffffff; }
-.cbh-switch input:checked + .cbh-slider::before { transform: translate(16px, -50%); background: #000; }
+.cbh-switch input:checked + .cbh-slider { background: #4d7cf0; border-color: #4d7cf0; box-shadow: 0 0 10px rgba(77,124,240,0.45); }
+.cbh-switch input:checked + .cbh-slider::before { transform: translate(16px, -50%); background: #ffffff; }
 .cbh-status {
-  padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 600; text-transform: uppercase;
-  background: #ffffff; color: #000; transition: all .2s; border: 1px solid #fff;
+  padding: 2px 7px; border-radius: 999px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
+  background: rgba(138,180,255,0.12); color: #8ab4ff; transition: all .2s; border: 1px solid rgba(138,180,255,0.25);
 }
-.cbh-status--showing { background: rgba(239, 68, 68, 0.1); color: #fca5a5; border-color: rgba(239, 68, 68, 0.2); }
+.cbh-status--showing { background: rgba(239, 68, 68, 0.1); color: #fca5a5; border-color: rgba(239, 68, 68, 0.25); }
 .cbh-collapse-btn {
   display: flex; align-items: center; justify-content: center;
-  width: 22px; height: 22px; border: none; border-radius: 4px;
-  background: transparent; color: #a1a1aa; font-size: 14px; cursor: pointer;
+  width: 22px; height: 22px; border: none; border-radius: 6px;
+  background: transparent; color: #6f7d97; font-size: 14px; cursor: pointer;
   transition: all .2s; position: relative; z-index: 2;
 }
 .cbh-panel--collapsed .cbh-collapse-btn { width: 22px; height: 22px; }
-.cbh-collapse-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+.cbh-collapse-btn:hover { background: rgba(138,180,255,0.12); color: #8ab4ff; }
 `;
 
   // ── State ────────────────────────────────────────────────────────────────
@@ -171,6 +173,16 @@
     const panel = document.createElement('div');
     panel.className = 'cbh-panel';
     panelEl = panel;
+
+    // The Nib mark (icons/icon.svg), inline so the page needs no extension URL.
+    const logo = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    logo.setAttribute('class', 'cbh-logo');
+    logo.setAttribute('viewBox', '0 0 32 32');
+    logo.setAttribute('aria-hidden', 'true');
+    logo.innerHTML = '<rect width="32" height="32" rx="7" fill="#0b1426"/>'
+      + '<g stroke="#8ab4ff" stroke-width="2.4" stroke-linecap="round"><path d="M10 23V9"/><path d="M22 9v14"/><path d="M10 9l12 14"/></g>'
+      + '<circle cx="10" cy="9" r="3.2" fill="#8ab4ff"/><circle cx="22" cy="23" r="3.2" fill="#8ab4ff"/>';
+    panel.appendChild(logo);
 
     const title = document.createElement('span');
     title.className = 'cbh-title';
