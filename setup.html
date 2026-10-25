@@ -274,7 +274,7 @@
       <a href="#usage">Usage</a>
       <a href="#limits">Limits</a>
     </div>
-    <a href="https://github.com/puria1234/collegeboard-nexus" class="nav-download">
+    <a href="https://github.com/aarav-puri/nib" class="nav-download">
       <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
       GitHub
     </a>
@@ -300,9 +300,9 @@
         <div class="step-num">1</div>
         <div class="step-body">
           <h3>Download the folder</h3>
-          <p>On the <a class="inline" href="https://github.com/puria1234/collegeboard-nexus">GitHub page</a>, click the green Code button, then Download ZIP. Unzip it somewhere you will not accidentally delete, like Documents. Not Downloads, since the extension breaks if the folder moves.</p>
+          <p>On the <a class="inline" href="https://github.com/aarav-puri/nib">GitHub page</a>, click the green Code button, then Download ZIP. Unzip it somewhere you will not accidentally delete, like Documents. Not Downloads, since the extension breaks if the folder moves.</p>
           <p>If you use git, clone it instead:</p>
-          <pre><span class="k">git clone</span> https://github.com/puria1234/collegeboard-nexus</pre>
+          <pre><span class="k">git clone</span> https://github.com/aarav-puri/nib</pre>
         </div>
       </div>
 
@@ -342,77 +342,30 @@ Brave &nbsp;&nbsp;<span class="k">brave://extensions</span></pre>
       </div>
     </section>
 
-    <!-- API KEY -->
-    <section id="key">
-      <h2>Add your Claude API key</h2>
-
-      <p class="lede" style="font-size:15px;margin-bottom:26px;">
-        Only needed for the AI study tools. Extracting questions and the Answer Hider both work without a key.
-      </p>
-
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-body">
-          <h3>Create a key</h3>
-          <p>Sign in at <a class="inline" href="https://console.anthropic.com">console.anthropic.com</a> and create an API key under API Keys. Copy it when it appears, since the console will not show it to you again.</p>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-body">
-          <h3>Paste it into Nib</h3>
-          <p>Open the popup, click the gear icon in the top right, and paste the key into Settings. It is saved in your browser's local storage and is never sent anywhere except to Anthropic when you generate something.</p>
-        </div>
-      </div>
-
-      <div class="callout">
-        <strong>API usage costs money</strong>
-        <p>Claude API keys are billed per use, separately from a Claude subscription. Generating flashcards for one unit costs a fraction of a cent, but set a spending limit in the console so a runaway loop cannot surprise you.</p>
-      </div>
-    </section>
-
-    <!-- USAGE -->
     <section id="usage">
       <h2>Using it</h2>
 
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-body">
-          <h3>Open a question page</h3>
-          <p>Go to an AP Classroom assignment or quiz that shows multiple-choice or free-response questions. The popup only activates on <code>apclassroom.collegeboard.org</code>, so on any other site the buttons stay greyed out.</p>
+          <h3>Open a graded assignment</h3>
+          <p>Go to an AP Classroom assignment or progress check you have already finished. The popup only activates on <code>apclassroom.collegeboard.org</code>.</p>
         </div>
       </div>
 
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-body">
-          <h3>Pick your course</h3>
-          <p>Click the Nib icon and choose your course from the dropdown. This is required before extraction, because it tells Nib how to label the export. The dropdown now covers every AP course, not just AP Physics 2 and AP English Language.</p>
+          <h3>Turn on Answer Hider</h3>
+          <p>Click the Nib icon and flip the Answer Hider toggle. A small floating panel also appears on the page so you can switch it without reopening the popup.</p>
         </div>
       </div>
 
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-body">
-          <h3>Optional: turn on Answer Hider</h3>
-          <p>Flip the toggle to cover the correct and incorrect markers so a graded review page works as fresh practice. A small floating panel also appears on the page itself if you want to toggle it without reopening the popup.</p>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-num">4</div>
-        <div class="step-body">
-          <h3>Extract and download</h3>
-          <p>Hit Extract questions. Nib shows you what it found, including any questions whose answer choices are images rather than text. If the count looks right, click Download to save a <code>.txt</code>.</p>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-num">5</div>
-        <div class="step-body">
-          <h3>Optional: generate study material</h3>
-          <p>Under AI study tools, pick a mode: similar questions, flashcards, or a concept summary. Choose a count where it applies, then click Generate. Output appears in the popup for you to copy.</p>
+          <h3>Work through it again</h3>
+          <p>Answer each question with the markers covered, then turn hiding off to check yourself.</p>
         </div>
       </div>
     </section>
@@ -421,11 +374,9 @@ Brave &nbsp;&nbsp;<span class="k">brave://extensions</span></pre>
     <section id="limits">
       <h2>What it will not do</h2>
       <ul class="limits">
-        <li>MCQ and FRQ extraction across all AP courses is in beta. Coverage is best for AP Physics 2 and AP English Language, and may miss questions on other courses or unusual page layouts.</li>
-        <li>Other formats (e.g. drag-and-drop, matching) are still skipped.</li>
-        <li>When answer choices are images, the export notes that they could not be pulled out as text rather than dropping them silently.</li>
+        <li>It hides markers on multiple-choice questions. Other question layouts may still show feedback.</li>
         <li>The popup stays inactive anywhere outside <code>apclassroom.collegeboard.org</code>.</li>
-        <li>Nothing syncs. Your key and settings live in one browser profile on one computer.</li>
+        <li>It keeps no data and makes no network requests.</li>
       </ul>
     </section>
 
@@ -442,12 +393,8 @@ Brave &nbsp;&nbsp;<span class="k">brave://extensions</span></pre>
           <div class="trouble-a">You selected a folder one level too high. Open it, and if you see another folder rather than <code>manifest.json</code>, select that inner one instead.</div>
         </div>
         <div class="trouble-row">
-          <div class="trouble-q">Extract finds zero questions</div>
-          <div class="trouble-a">The questions may not have finished rendering. Scroll through the whole set so every question loads, then try again.</div>
-        </div>
-        <div class="trouble-row">
-          <div class="trouble-q">AI generation fails with a CORS error</div>
-          <div class="trouble-a">Calls to the Anthropic API from a browser extension need the <code>anthropic-dangerous-direct-browser-access</code> header set to true. If you built from source and stripped it out, add it back.</div>
+          <div class="trouble-q">Some markers still show</div>
+          <div class="trouble-a">Questions inside frames can load after Nib does. Refresh the page and turn Answer Hider on again.</div>
         </div>
         <div class="trouble-row">
           <div class="trouble-q">The extension vanished after a restart</div>
@@ -458,7 +405,7 @@ Brave &nbsp;&nbsp;<span class="k">brave://extensions</span></pre>
 
     <p class="footer-note">
       Nib is an independent open-source project. Not affiliated with, endorsed by, or connected to the College Board.
-      Exported questions are College Board material, so keep them to yourself and use Nib in line with your school's academic integrity policy.
+      Use Nib in line with your school's academic integrity policy.
     </p>
 
   </div>

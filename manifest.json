@@ -1,15 +1,11 @@
 {
   "manifest_version": 3,
   "name": "Nib",
-  "version": "1.1.0",
-  "description": "Export AP Classroom multiple-choice questions to text, hide answer markers while studying, and generate AI study material",
+  "version": "2.0.0",
+  "description": "Hide AP Classroom answer markers so finished assignments become fresh practice",
   "permissions": [
     "activeTab",
-    "scripting",
-    "storage"
-  ],
-  "host_permissions": [
-    "https://api.anthropic.com/*"
+    "scripting"
   ],
   "action": {
     "default_popup": "popup.html",
@@ -25,17 +21,6 @@
     "128": "icons/icon128.png"
   },
   "content_scripts": [
-    {
-      "matches": [
-        "*://apclassroom.collegeboard.org/*",
-        "*://*.learnosity.com/*"
-      ],
-      "js": [
-        "content.js"
-      ],
-      "run_at": "document_idle",
-      "all_frames": true
-    },
     {
       "matches": [
         "*://apclassroom.collegeboard.org/*",

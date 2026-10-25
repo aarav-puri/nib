@@ -26,72 +26,8 @@
               <h1 class="brand-title">Nib</h1>
             </div>
           </div>
-          <button class="gear-btn" id="settingsBtn" type="button" aria-label="Settings">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="3"/>
-              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6h.09A1.65 1.65 0 0 0 10 3.09V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-            </svg>
-          </button>
         </div>
 
-        <!-- Settings Panel -->
-        <div class="settings-panel" id="settingsPanel" style="display: none;">
-          <div class="settings-row">
-            <label class="course-label" for="apiKeyInput">Claude API key</label>
-            <input type="password" id="apiKeyInput" class="settings-input" placeholder="sk-ant-...">
-          </div>
-          <p class="settings-hint">Only needed for AI study tools. Stored in your browser's local storage and only sent to Anthropic when you generate something.</p>
-          <div class="settings-actions">
-            <button class="btn btn-primary" id="saveApiKeyBtn" type="button">Save key</button>
-          </div>
-          <p class="settings-status" id="settingsStatus"></p>
-        </div>
-      <div class="course-select">
-        <div class="course-row">
-          <label class="course-label" for="courseSelect">Course</label>
-          <div class="select-wrap">
-            <select id="courseSelect">
-              <option value="" disabled>Select a course</option>
-              <option value="ap_art_history">AP Art History</option>
-              <option value="ap_biology">AP Biology</option>
-              <option value="ap_calculus_ab">AP Calculus AB</option>
-              <option value="ap_calculus_bc">AP Calculus BC</option>
-              <option value="ap_chemistry">AP Chemistry</option>
-              <option value="ap_chinese">AP Chinese Language &amp; Culture</option>
-              <option value="ap_comparative_government">AP Comparative Government &amp; Politics</option>
-              <option value="ap_computer_science_a">AP Computer Science A</option>
-              <option value="ap_computer_science_principles">AP Computer Science Principles</option>
-              <option value="ap_english_language">AP English Language &amp; Composition</option>
-              <option value="ap_english_literature">AP English Literature &amp; Composition</option>
-              <option value="ap_environmental_science">AP Environmental Science</option>
-              <option value="ap_european_history">AP European History</option>
-              <option value="ap_french">AP French Language &amp; Culture</option>
-              <option value="ap_german">AP German Language &amp; Culture</option>
-              <option value="ap_human_geography">AP Human Geography</option>
-              <option value="ap_italian">AP Italian Language &amp; Culture</option>
-              <option value="ap_japanese">AP Japanese Language &amp; Culture</option>
-              <option value="ap_latin">AP Latin</option>
-              <option value="ap_macroeconomics">AP Macroeconomics</option>
-              <option value="ap_microeconomics">AP Microeconomics</option>
-              <option value="ap_music_theory">AP Music Theory</option>
-              <option value="ap_physics_1">AP Physics 1</option>
-              <option value="ap_physics_2">AP Physics 2</option>
-              <option value="ap_physics_c_em">AP Physics C: Electricity &amp; Magnetism</option>
-              <option value="ap_physics_c_mechanics">AP Physics C: Mechanics</option>
-              <option value="ap_psychology">AP Psychology</option>
-              <option value="ap_spanish_language">AP Spanish Language &amp; Culture</option>
-              <option value="ap_spanish_literature">AP Spanish Literature &amp; Culture</option>
-              <option value="ap_statistics">AP Statistics</option>
-              <option value="ap_us_government">AP US Government &amp; Politics</option>
-              <option value="ap_us_history">AP US History</option>
-              <option value="ap_world_history">AP World History: Modern</option>
-              <option value="ap_other">Other AP course</option>
-            </select>
-            <span class="select-required">required</span>
-          </div>
-        </div>
-        <div class="course-hint">Beta: extracts MCQ &amp; FRQ across all AP courses. Results may vary by course.</div>
-      </div>
       <div class="tool-card" id="hiderCard" style="display: none;">
         <div class="tool-row" style="margin-bottom: 0; gap: 16px;">
           <div class="tool-info" style="flex: 1; min-width: 0;">
@@ -108,55 +44,7 @@
           </div>
         </div>
       </div>
-      <button class="btn btn-primary header-extract-btn" id="extractBtn" disabled style="display: none;">
-        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
-          <path d="M9 14l2 2 4-4"/>
-        </svg>
-        Extract questions
-      </button>
     </header>
-
-    <!-- Results Section -->
-    <div class="results" id="resultsSection" style="display: none;">
-      <div class="results-header">
-        <span class="results-label" id="resultsLabel">0 questions ready</span>
-      </div>
-      <div class="preview" id="previewBox"></div>
-      <button class="btn btn-download" id="downloadBtn">
-        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
-          <polyline points="7 10 12 15 17 10"/>
-          <line x1="12" y1="15" x2="12" y2="3"/>
-        </svg>
-        Download
-      </button>
-    </div>
-
-    <!-- AI Study Tools -->
-    <div class="ai-panel" id="aiPanel" style="display: none; margin: 0 24px 24px;">
-      <div class="ai-header">
-        <span class="ai-title">AI study tools</span>
-      </div>
-
-      <div class="ai-grid">
-        <div>
-          <div class="chip-row">
-            <button type="button" class="chip on" data-mode="similar">Similar questions</button>
-            <button type="button" class="chip" data-mode="flashcards">Flashcards</button>
-            <button type="button" class="chip" data-mode="summary">Concept summary</button>
-          </div>
-        </div>
-        <div class="ai-row-group" id="aiCountRow">
-          <span class="ai-inline-label">Count</span>
-          <input type="number" id="aiCount" class="ai-input--count" value="5" min="1" max="20">
-        </div>
-      </div>
-
-      <button class="btn btn-primary" id="generateBtn" type="button">Generate with AI</button>
-      <p class="ai-status" id="aiStatus"></p>
-      <div class="ai-output" id="aiOutput" style="display: none;"></div>
-    </div>
 
     <!-- Error Card -->
     <div class="card card-error" id="errorCard" style="display: none;">
@@ -182,7 +70,7 @@
         <h2 class="card-title">Not AP Classroom</h2>
       </div>
       <p class="card-text">
-        Navigate to an AP Classroom assignment or quiz page to extract questions.
+        Open an AP Classroom assignment or quiz to hide its answer markers.
       </p>
     </div>
 
